@@ -19,9 +19,9 @@
 	.contentItem {
 		margin-left: 2.5%;
 		margin-right: 2.5%;
-		margin-top: 3%;
+		margin-bottom: max(2.5%, 2.5vw);
 		
-		height: 55vh;
+		height: calc(45vh + 12.5vw);
 
 		font-family: "Poppins", "sans-serif";
 
@@ -29,6 +29,10 @@
 			float: left;
 			width: 50%;
 			height: 100%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 
 			h1 {
 				font-size: calc((1vw + 1vh) / 0.4375);
@@ -54,14 +58,11 @@
 	}
 
 	.left {
-		background-color: red;
 		#content {
 			float: right;
-			background-color: blue;
 		}
 
 		#visual {
-			background-color: yellow;
 			float: left;
 		}
 	}
