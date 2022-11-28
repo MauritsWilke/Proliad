@@ -23,8 +23,6 @@
 		
 		height: calc(45vh + 12.5vw);
 
-		font-family: "Poppins", "sans-serif";
-
 		#content {
 			float: left;
 			width: 50%;
@@ -36,6 +34,10 @@
 
 			h1 {
 				font-size: calc((1vw + 1vh) / 0.4375);
+				line-height: calc((1vw + 1vh) / 0.5);
+				width: 100%;
+				z-index: 100;
+				margin-bottom: 15px;
 			}
 
 			p {
@@ -45,7 +47,7 @@
 
 		#visual {
 			float: right;
-			width: 50%;
+			width: calc(50% - 2.5%);
 			height: 100%;
 
 			img {
