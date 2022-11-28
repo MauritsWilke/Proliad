@@ -25,7 +25,7 @@
 
 		#content {
 			float: left;
-			width: 50%;
+			width: calc(50% - 1.25%);
 			height: 100%;
 
 			display: flex;
@@ -47,7 +47,7 @@
 
 		#visual {
 			float: right;
-			width: calc(50% - 2.5%);
+			width: calc(50% - 1.25%);
 			height: 100%;
 
 			img {
