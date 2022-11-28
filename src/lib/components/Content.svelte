@@ -19,9 +19,8 @@
 	.contentItem {
 		margin-left: 2.5%;
 		margin-right: 2.5%;
-		margin-bottom: max(2.5%, 2.5vw);
-		
-		height: calc(45vh + 12.5vw);
+		margin-bottom: calc(3vh + 5vw);
+		height: calc(35vh + 12.5vw);
 
 		#content {
 			float: left;
@@ -62,6 +61,7 @@
 	.left {
 		#content {
 			float: right;
+			text-align: right;
 		}
 
 		#visual {
