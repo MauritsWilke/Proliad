@@ -5,7 +5,7 @@
 	export let alignment: "left" | "right" = "right";
 </script>
 
-<div id={title} class={alignment}>
+<div id={title} class="{alignment} contentItem">
 	<div id="content">
 		<h1>{title}</h1>
 		<p>{text}</p>
@@ -16,9 +16,10 @@
 </div>
 
 <style lang="scss">
-	.right {
-		margin-left: 5%;
-		margin-right: 5%;
+	.contentItem {
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		margin-top: 3%;
 		
 		height: 55vh;
 
@@ -26,28 +27,42 @@
 
 		#content {
 			float: left;
-			width: 55%;
+			width: 50%;
+			height: 100%;
 
 			h1 {
-				font-size: calc((1.3vw + 1vh) / 0.4375);
+				font-size: calc((1vw + 1vh) / 0.4375);
 			}
 
 			p {
-				font-size: calc(1.3vw + 1vh);
+				font-size: calc(1vw + 1vh);
 			}
 		}
 
 		#visual {
 			float: right;
-			width: 45%;
+			width: 50%;
 			height: 100%;
-			background-color: yellow;
 
 			img {
-				width: 100%;
+				width: max(150px, 100%);
+				height: 100%;
+				object-fit: contain;
+				overflow: hidden;
 			}
 		}
+	}
 
-		background-color: blue;
+	.left {
+		background-color: red;
+		#content {
+			float: right;
+			background-color: blue;
+		}
+
+		#visual {
+			background-color: yellow;
+			float: left;
+		}
 	}
 </style>
