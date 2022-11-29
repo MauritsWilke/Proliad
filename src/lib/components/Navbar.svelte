@@ -1,7 +1,9 @@
-
+<script lang="ts">
+    export let logoURL: string;
+</script>
 
 <div id="navbar">
-    <img src="logo.png" alt="logo" />
+    <img src={logoURL} alt="logo" />
 </div>
 
 <style lang="scss">
