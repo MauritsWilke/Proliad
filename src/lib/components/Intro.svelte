@@ -1,7 +1,9 @@
+<script lang="ts">
+    export let text: string = "";
+</script>
+
 <div>
-    <p>
-        Wij stellen hoge eisen aan onze leveranciers en partners zodat u kunt profiteren van het beste op de markt. Wij maken gebruik van de hoogste kwaliteit aluminium, de beste Led-chips en de nieuwste drivers. We communiceren direct met lichtontwerpers en architecten, hieruit produceren en assembleren we onze producten zelf. Verder houden wij ons actief bezig met het tegenhouden van lichtvervuiling. We doen bijvoorbeeld mee aan projecten om ’s nachts minder openbare verlichting aan te hebben staan.
-    </p>
+    <p>{text}</p>
 </div>
 
 <style lang="scss">
