@@ -4,6 +4,9 @@
 	
 	overflow-x: hidden;
 
+	animation: fadeIn 1s;
+	opacity: 1;
+
 	#wereldbol {
 		width: 100%;
 		margin-bottom: calc(1vh + 1vw);
@@ -26,3 +29,12 @@
 @media only screen and (max-width: 900px) {
     @import "./styling.mobile.scss";
 }
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+	   opacity: 1;
+	}
+  }
