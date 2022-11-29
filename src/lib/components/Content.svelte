@@ -1,19 +1,22 @@
 <script lang="ts">
-	export let title: string;
-	export let text: string;
-	export let imageURL: string;
-	export let alignment: "left" | "right" = "right";
+	import type { DocumentData } from "firebase/firestore";
+
+	export let contentItems: DocumentData[];
 </script>
 
-<div id={title} class="{alignment} contentItem">
-	<div id="content">
-		<h1>{title}</h1>
-		<p>{text}</p>
+{#each contentItems as item}
+{#key contentItems}
+	<div id={item.title} class="{contentItems.indexOf(item) % 2 ? "left" : "right"} contentItem">
+		<div id="content">
+			<h1>{item.title}</h1>
+			<p>{item.text}</p>
+		</div>
+		<div id="visual">
+			<img src={item.imageURL} alt={`${item.title} image`} />
+		</div>
 	</div>
-	<div id="visual">
-		<img src={imageURL} alt={`${title} image`} />
-	</div>
-</div>
+{/key}
+{/each}
 
 <style lang="scss">
 	.contentItem {

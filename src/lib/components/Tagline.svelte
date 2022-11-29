@@ -1,7 +1,10 @@
+<script lang="ts">
+    export let text: string;
+</script>
+
 <div id="tagline">
 	<p>
-		<span>L</span>okaal produceren en de beste kwaliteit garanderen. <br /> Proliad
-		vindt het belangrijk om lokaal te produceren, te innoveren en te verbeteren.
+		<span>{text.charAt(0)}</span>{text.slice(1)}
 	</p>
 </div>
 
