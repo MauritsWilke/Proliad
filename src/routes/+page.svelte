@@ -1,5 +1,7 @@
 <script lang="ts">
 	import "../global.scss";
+	import "./styling.scss";
+
 	import Content from '$lib/components/Content.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Tagline from '$lib/components/Tagline.svelte';
@@ -50,28 +52,4 @@
 </div>
 
 <style lang="scss">
-	#wrapper {
-		height: 100vh;
-		width: 100vw;
-		
-		overflow-x: hidden;
-
-		#wereldbol {
-			width: 100%;
-			margin-bottom: calc(1vh + 1vw);
-		}
-	}
-
-	::-webkit-scrollbar {
-		width: 1vw;
-		display: block;
-	}
-
-	::-webkit-scrollbar-thumb {
-		background: #888;
-	}
-
-	::-webkit-scrollbar-thumb:hover {
-		background: #555;
-	}
 </style>
