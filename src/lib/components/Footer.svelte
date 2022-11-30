@@ -45,11 +45,12 @@
                 margin-left: 2vw;
                 h2 {
                     font-size: calc(1.5vw + 1.5vh);
+                    line-height: calc(1vw + 2vh);
                 }
 
                 p {
                     font-size: calc(1vw + 0.6vh);
-                    line-height: calc(1vw + 2vh);
+                    line-height: calc(1.25vw + 1.2vh);
                     max-width: 35vw;
                 }
             }
