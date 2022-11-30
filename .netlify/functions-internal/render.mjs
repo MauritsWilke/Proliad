@@ -3,10 +3,10 @@ import { init } from '../serverless.js';
 export const handler = init({
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set(["busje.png","dozen.png","favicon.png","huisvesting.png","lamp.png","logo.png","recyclebak.png","toolbox.png","Wereldbol.png","winkel.png"]),
-	mimeTypes: {".png":"image/png"},
+	assets: new Set(["logo.png","Wereldbol.svg"]),
+	mimeTypes: {".png":"image/png",".svg":"image/svg+xml"},
 	_: {
-		entry: {"file":"_app/immutable/start-42aae437.js","imports":["_app/immutable/start-42aae437.js","_app/immutable/chunks/index-d6629a5e.js","_app/immutable/chunks/singletons-09017bf2.js"],"stylesheets":[],"fonts":[]},
+		entry: {"file":"_app/immutable/start-06a99bc4.js","imports":["_app/immutable/start-06a99bc4.js","_app/immutable/chunks/index-8a15e943.js","_app/immutable/chunks/singletons-6e1101ad.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			() => import('../server/nodes/0.js'),
 			() => import('../server/nodes/1.js'),

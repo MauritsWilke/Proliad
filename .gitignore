@@ -9,3 +9,4 @@ node_modules
 .svelte-kit/build
 .svelte-kit/generated
 .svelte-kit/output
+.svelte-kit/ambient.d.ts
