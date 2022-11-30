@@ -1,19 +1,26 @@
+<script lang="ts">
+	import type { DocumentData } from "firebase/firestore";
+
+
+    export let footerData: DocumentData;
+</script>
+
 
 <div id="footer">
-    <h1>Contact</h1>
+    <h1>{footerData.title}</h1>
     <div id="info">
         <div id="contact">
-            <h2>PROLIAD LED LIGHTING</h2>
-            <p>Vrijkenstraat 18, 6088 PA, Roggel</p>
-            <p>info@proliad.com</p>
-            <p>+31 (0)4 75 44 44 20</p>
+            <h2>{footerData.name}</h2>
+            <p>{footerData.address}</p>
+            <p>{footerData.email}</p>
+            <p>{footerData.phone}</p>
         </div>
         <div id="socials">
-            <img src="https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/o/assets%2Fproliad-facebook.png?alt=media" alt="facebook" />
-            <img src="https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/o/assets%2Fproliad-twitter.png?alt=media" alt="facebook" />
-            <img src="https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/o/assets%2Fproliad-linkedin.png?alt=media" alt="facebook" />
-            <p>Schrijf je <a href="https://www.proliad.com/nieuws">hier</a> in voor onze nieuwsbrief.</p>
-            <p>Open van maandag tot en met vrijdag tussen 09.00 en 17.00 uur. Bezoek geschiedt alléén op afspraak.</p>
+            <img src={footerData.facebookIcon} alt="facebook" href={footerData.facebookLink} />
+            <img src={footerData.twitterIcon} alt="twitter" href={footerData.twitterLink} />
+            <img src={footerData.linkedInIcon} alt="linkedin" href={footerData.linkedInLink} />
+            <p>{@html (footerData.newsletter ?? "").replace(footerData.newsletterLinkWord, `<a style="color: #fdf8ff; background-color: transparent;" href="${footerData.newsletterLink}">${footerData.newsletterLinkWord}</a>`)}</p>
+            <p>{footerData.open}</p>
         
         </div>
     </div>
@@ -39,13 +46,15 @@
             grid-template-columns: 1fr 1fr;
             margin-top: calc(1vw + 1vh);
             margin-left: 5vw;
+            margin-right: 5vw;
             padding-bottom: calc(1.5vh + 1vw);
 
             #contact {
                 margin-left: 2vw;
+                margin-right: 2vw;
                 h2 {
                     font-size: calc(1.5vw + 1.5vh);
-                    line-height: calc(1vw + 2vh);
+                    line-height: calc(1.5vw + 2vh);
                 }
 
                 p {
@@ -57,6 +66,7 @@
 
             #socials {
                 margin-right: 2vw;
+                margin-left: 2vw;
                 margin-top: calc((-1.5vw - 1.5vh) / 2);
 
                 p {
