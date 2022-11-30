@@ -22,7 +22,7 @@
 		margin-left: 2.5%;
 		margin-right: 2.5%;
 		margin-top: 75px;
-		margin-bottom: 100px;
+		margin-bottom: calc(150px + 5vw);
 		height: calc(10vh + 15vw);
 
 		#content {
@@ -62,14 +62,18 @@
 		}
 	}
 
-	.left {
-		#content {
-			float: right;
-			text-align: right;
-		}
+	@media (min-width: 800px) {
+		.contentItem {
+			.left {
+				#content {
+					float: right;
+					text-align: right;
+				}
 
-		#visual {
-			float: left;
+				#visual {
+					float: left;
+				}
+			}
 		}
 	}
 </style>
