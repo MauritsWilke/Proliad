@@ -57,7 +57,7 @@
 
             #socials {
                 margin-right: 2vw;
-                margin-top: calc(1.5vw + 1.5vh);
+                margin-top: calc((-1.5vw - 1.5vh) / 2);
 
                 p {
                     font-size: calc(1vw + 0.6vh);
@@ -65,7 +65,7 @@
                 }
 
                 img {
-                    width: calc(1.5vw + 2vh);
+                    width: calc(1.5vw + 1.5vh);
                     height: auto;
                     margin-top: 1vh;
                     margin-right: calc((1.5vw + 2vh) * 0.5);
