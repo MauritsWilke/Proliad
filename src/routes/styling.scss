@@ -3,6 +3,7 @@
 	width: 100vw;
 	
 	overflow-x: hidden;
+	overflow-y: overlay;
 
 	animation: fadeIn 1.25s;
 	opacity: 1;
@@ -15,7 +16,7 @@
 
 ::-webkit-scrollbar {
 	width: 1vw;
-	display: block;
+	display: flex;
 }
 
 ::-webkit-scrollbar-thumb {
