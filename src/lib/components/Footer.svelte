@@ -48,7 +48,7 @@
                 }
 
                 p {
-                    font-size: calc(1vw + 0.75vh);
+                    font-size: calc(1vw + 0.6vh);
                     line-height: calc(1vw + 2vh);
                     max-width: 35vw;
                 }
@@ -59,7 +59,7 @@
                 margin-top: calc(1.5vw + 1.5vh);
 
                 p {
-                    font-size: calc(1vw + 0.50vh);
+                    font-size: calc(1vw + 0.6vh);
                     max-width: calc(49vw - 2.5vh);
                 }
 
