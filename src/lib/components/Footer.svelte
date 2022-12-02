@@ -55,12 +55,11 @@
 
                 h2 {
                     font-size: calc(1.5vw + 1.5vh);
-                    line-height: calc(1.5vw + 2vh);
+                    line-height: calc(1.5vw + 1.5vh);
                 }
 
                 p {
                     font-size: calc(1vw + 0.6vh);
-                    line-height: calc(1.25vw + 1.2vh);
                     max-width: 35vw;
                 }
             }
@@ -68,7 +67,6 @@
             #socials {
                 margin-right: 2vw;
                 margin-left: 2vw;
-                margin-top: calc(-0.375vw - 0.375vh);
 
                 p {
                     font-size: calc(1vw + 0.6vh);
@@ -76,11 +74,8 @@
                 }
 
                 img {
-                    width: calc(1.5vw + 1.5vh);
-                    height: auto;
-                    margin-top: 1vh;
+                    height: calc(1.5vw + 1.5vh);
                     margin-right: calc((1.5vw + 2vh) * 0.5);
-                    margin-bottom: 1vh;
                     cursor: pointer;
                 }
             }
