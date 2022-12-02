@@ -24,7 +24,7 @@ const config = {
 					'self', 'https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/'
 				],
 			  'style-src': [
-					'self', 'https://fonts.googleapis.com/', 'inline-unsafe'
+					'self', 'https://fonts.googleapis.com/', 'unsafe-inline'
 				],
 				'media-src': ["https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/media-src"]
 			}
