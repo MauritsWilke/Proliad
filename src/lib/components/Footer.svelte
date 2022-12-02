@@ -52,6 +52,7 @@
             #contact {
                 margin-left: 2vw;
                 margin-right: 2vw;
+
                 h2 {
                     font-size: calc(1.5vw + 1.5vh);
                     line-height: calc(1.5vw + 2vh);
@@ -67,7 +68,7 @@
             #socials {
                 margin-right: 2vw;
                 margin-left: 2vw;
-                margin-top: calc((-1.5vw - 1.5vh) / 2);
+                margin-top: calc(-0.375vw - 0.375vh);
 
                 p {
                     font-size: calc(1vw + 0.6vh);
