@@ -80,6 +80,7 @@
                     margin-top: 1vh;
                     margin-right: calc((1.5vw + 2vh) * 0.5);
                     margin-bottom: 1vh;
+                    cursor: pointer;
                 }
             }
         }

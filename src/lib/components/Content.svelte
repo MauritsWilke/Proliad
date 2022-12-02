@@ -39,7 +39,7 @@
 				line-height: calc((1vw + 1vh) / 0.45);
 				width: 100%;
 				z-index: 100;
-				margin-bottom: 15px;
+				margin-bottom: 1vh;
 			}
 
 			p {
