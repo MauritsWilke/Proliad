@@ -12,19 +12,13 @@
 		width: 100%;
 		margin-bottom: calc(1vh + 1vw);
 	}
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
-	width: 1vw;
-	display: flex;
-}
-
-::-webkit-scrollbar-thumb {
-	background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	display: none;
 }
 
 @media only screen and (max-width: 900px) {
