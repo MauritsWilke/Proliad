@@ -56,12 +56,16 @@
 
 		#visual {
 			float: right;
+
+			display: grid;
+			place-items: center;
+
 			width: calc(50% - 2.5%);
 			height: 100%;
 
 			img {
-				width: max(150px, 100%);
-				height: 100%;
+				width: max(500px);
+				height: max(300px);
 				object-fit: contain;
 				overflow: hidden;
 			}
