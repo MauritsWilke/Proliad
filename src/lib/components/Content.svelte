@@ -25,8 +25,8 @@
 
 <style lang="scss">
 	.contentItem {
-		margin-left: 2.5%;
-		margin-right: 2.5%;
+		margin-left: 7.5%;
+		margin-right: 7.5%;
 		margin-top: 75px;
 		margin-bottom: calc(150px + 5vw);
 		height: calc(10vh + 15vw);
@@ -56,12 +56,16 @@
 
 		#visual {
 			float: right;
+
+			display: grid;
+			place-items: center;
+
 			width: calc(50% - 2.5%);
 			height: 100%;
 
 			img {
-				width: max(150px, 100%);
-				height: 100%;
+				width: max(500px);
+				height: max(300px);
 				object-fit: contain;
 				overflow: hidden;
 			}
