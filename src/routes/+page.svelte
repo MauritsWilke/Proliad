@@ -51,7 +51,3 @@
 	<Content {contentItems} order={other.order} />
 	<Footer footerData={footerData} />
 </div>
-
-<style lang="scss">
-	
-</style>
