@@ -1,18 +1,24 @@
 <script lang="ts">
 	import type { DocumentData } from "firebase/firestore";
 
-	export let contentItems: {[key: string]: DocumentData};
+	export let contentItems: { [key: string]: DocumentData };
 	export let order: string[];
 </script>
 
 {#each order as orderTitle, i (i)}
-	<div id={contentItems[orderTitle].title} class="{i % 2 === 0 ? "right" : "left"} contentItem">
+	<div
+		id={contentItems[orderTitle].title}
+		class="{i % 2 === 0 ? 'right' : 'left'} contentItem"
+	>
 		<div id="content">
 			<h1>{contentItems[orderTitle].title}</h1>
 			<p>{contentItems[orderTitle].text}</p>
 		</div>
 		<div id="visual">
-			<img src={contentItems[orderTitle].imageURL} alt={`${contentItems[orderTitle].title} image`} />
+			<img
+				src={contentItems[orderTitle].imageURL}
+				alt={`${contentItems[orderTitle].title} image`}
+			/>
 		</div>
 	</div>
 {/each}
@@ -63,16 +69,14 @@
 	}
 
 	@media (min-width: 800px) {
-		.contentItem {
-			.left {
-				#content {
-					float: right;
-					text-align: right;
-				}
+		.left {
+			#content {
+				float: right;
+				text-align: right;
+			}
 
-				#visual {
-					float: left;
-				}
+			#visual {
+				float: left;
 			}
 		}
 	}
