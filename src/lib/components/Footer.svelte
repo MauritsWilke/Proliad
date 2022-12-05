@@ -16,9 +16,9 @@
             <p>{footerData.phone}</p>
         </div>
         <div id="socials">
-            <img src={footerData.facebookIcon} alt="facebook" href={footerData.facebookLink} />
-            <img src={footerData.twitterIcon} alt="twitter" href={footerData.twitterLink} />
-            <img src={footerData.linkedInIcon} alt="linkedin" href={footerData.linkedInLink} />
+            <a href={footerData.facebookLink}><img src={footerData.facebookIcon} alt="facebook" /></a>
+            <a href={footerData.twitterLink}><img src={footerData.twitterIcon} alt="twitter" /></a>
+            <a href={footerData.linkedInLink}><img src={footerData.linkedInIcon} alt="linkedin" /></a>
             <p>{@html (footerData.newsletter ?? "").replace(footerData.newsletterLinkWord, `<a style="color: #fdf8ff; background-color: transparent;" href="${footerData.newsletterLink}">${footerData.newsletterLinkWord}</a>`)}</p>
             <p>{footerData.open}</p>
         
