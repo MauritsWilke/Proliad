@@ -54,10 +54,4 @@
 </div>
 
 <style lang="scss">
-	#Leaf {
-		margin-left: 40%;
-		width: 20%;
-		max-height: 400px;
-		margin-bottom: calc(2vh + 2vw);
-	}
 </style>
