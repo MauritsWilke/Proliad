@@ -47,7 +47,17 @@
 	<Navbar logoURL={other?.logoURL ?? "/logo.png"} />
 	<img id="wereldbol" src={other.globeURL ?? "/wereldbol.png"} alt="wereldbol" />
 	<Tagline text={other.tagline ?? ""} />
+	<img id="Leaf" src={other.leaf ?? "/blaadje.svg"} alt="Blad" />
 	<Intro text={other.intro  ?? ""} />
 	<Content {contentItems} order={other.order} />
 	<Footer footerData={footerData} />
 </div>
+
+<style lang="scss">
+	#Leaf {
+		margin-left: 40%;
+		width: 20%;
+		max-height: 400px;
+		margin-bottom: calc(2vh + 2vw);
+	}
+</style>
