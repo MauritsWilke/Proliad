@@ -50,7 +50,7 @@
 	<Tagline text={other.tagline ?? ""} />
 	<img id="Leaf" src={other.leaf ?? "/blaadje.svg"} alt="Blad" />
 	<Intro text={other.intro  ?? ""} />
-	<Quote text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm" color="#069747" />
+	<Quote text={other.quote ?? "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm"} color={other.quoteColor ?? "#069747"} />
 	<Content {contentItems} order={other.order} />
 	<Footer footerData={footerData} />
 </div>
