@@ -17,8 +17,6 @@
 
             font-size: calc(0.5vh + 1.25vw);
             font-weight: 400;
-
-            margin-bottom: calc(2vh + 2vw);
             text-align: center;
         }
     }
