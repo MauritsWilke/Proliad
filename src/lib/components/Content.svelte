@@ -64,8 +64,8 @@
 			height: 100%;
 
 			img {
-				width: max(500px);
-				height: max(300px);
+				width: max(150px, 100%);
+				height: 100%;
 				object-fit: contain;
 				overflow: hidden;
 			}
