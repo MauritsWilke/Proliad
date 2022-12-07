@@ -18,7 +18,7 @@
             width: calc(55.75%);
             font-size: calc(0.5vh + 1.25vw);
             font-weight: 400;
-            margin-bottom: calc(2vh + 2vw);
+            margin-bottom: calc(1vh + 1vw);
 
             span {
                 font-size: calc(2vh + 2vw);

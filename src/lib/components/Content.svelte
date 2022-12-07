@@ -60,7 +60,7 @@
 			display: grid;
 			place-items: center;
 
-			width: calc(50% - 2.5%);
+			width: calc(50% - 7.5%);
 			height: 100%;
 
 			img {

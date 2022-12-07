@@ -24,19 +24,20 @@
         padding-bottom: calc(2vh + 2vw);
 
         #quote {
-            display: table;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             height: 5vh;
 
             #marker {
-                height: 100%;
-                width: calc(0.4vw + 0.4vh);
-                margin-right: 1vw;
-                margin-left: 1vw;
+                display: inline-block;
+                vertical-align: middle;
+                height: 5vh;
+                width: calc(0.2vw + 0.2vh);
             }
 
             #text {
-                display: table-cell;
-                vertical-align: middle;
+                padding-left: 0.7vw;
                 font-weight: 300;
                 font-size: calc(1vw + 1vh);
             }
