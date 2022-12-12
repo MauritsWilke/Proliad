@@ -23,20 +23,32 @@
         margin-top: calc(2vh + 2vw);
         padding-bottom: calc(2vh + 2vw);
 
+<<<<<<< HEAD
         #quoteMain {
             display: table;
+=======
+        #quote {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+>>>>>>> a2f765f71a44cd07fae619a8c3e5729af15537c4
             height: 5vh;
 
             #marker {
-                height: 100%;
-                width: calc(0.4vw + 0.4vh);
-                margin-right: 1vw;
-                margin-left: 1vw;
+                display: inline-block;
+                vertical-align: middle;
+                height: 5vh;
+                width: calc(0.2vw + 0.2vh);
             }
 
+<<<<<<< HEAD
             #quote {
                 display: table-cell;
                 vertical-align: middle;
+=======
+            #text {
+                padding-left: 0.7vw;
+>>>>>>> a2f765f71a44cd07fae619a8c3e5729af15537c4
                 font-weight: 300;
                 font-size: calc(1vw + 1vh);
             }
