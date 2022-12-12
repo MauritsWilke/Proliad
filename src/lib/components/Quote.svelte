@@ -23,15 +23,10 @@
         margin-top: calc(2vh + 2vw);
         padding-bottom: calc(2vh + 2vw);
 
-<<<<<<< HEAD
         #quoteMain {
-            display: table;
-=======
-        #quote {
             display: flex;
             align-items: center;
             justify-content: center;
->>>>>>> a2f765f71a44cd07fae619a8c3e5729af15537c4
             height: 5vh;
 
             #marker {
@@ -41,18 +36,10 @@
                 width: calc(0.2vw + 0.2vh);
             }
 
-<<<<<<< HEAD
             #quote {
                 display: table-cell;
                 vertical-align: middle;
-=======
-            #text {
-                padding-left: 0.7vw;
->>>>>>> a2f765f71a44cd07fae619a8c3e5729af15537c4
-                font-weight: 300;
-                font-size: calc(1vw + 1vh);
             }
         }
     }
-    
 </style>
