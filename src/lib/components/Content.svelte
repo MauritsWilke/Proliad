@@ -3,8 +3,6 @@
 
 	export let contentItems: { [key: string]: DocumentData };
 	export let order: string[];
-
-	console.log(contentItems)
 </script>
 
 {#each order as orderTitle, i (i)}
