@@ -3,16 +3,18 @@
 
 	export let contentItems: { [key: string]: DocumentData };
 	export let order: string[];
+
+	console.log(contentItems)
 </script>
 
 {#each order as orderTitle, i (i)}
 	<div
-		id={contentItems[orderTitle].title}
+		id={orderTitle}
 		class="{i % 2 === 0 ? 'right' : 'left'} contentItem"
 	>
 		<div id="content">
-			<h1>{contentItems[orderTitle].title}</h1>
-			<p>{contentItems[orderTitle].text}</p>
+			<h1 class="editable">{@html contentItems[orderTitle].title}</h1>
+			<p class="editable">{@html contentItems[orderTitle].text}</p>
 		</div>
 		<div id="visual">
 			<img

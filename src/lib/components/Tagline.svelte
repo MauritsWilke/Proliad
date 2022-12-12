@@ -3,8 +3,8 @@
 </script>
 
 <div id="tagline">
-	<p>
-		<span>{text.charAt(0)}</span>{text.slice(1)}
+	<p class="editable">
+		<span class="editable">{@html text.charAt(0)}</span>{@html text.slice(1)}
 	</p>
 </div>
 

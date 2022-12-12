@@ -1,6 +1,10 @@
 #wrapper {
 	height: 100%;
 	width: 100%;
+
+	[contenteditable] {
+		outline: 0px solid transparent;
+	}
 	
 	overflow-x: hidden;
 	overflow-y: overlay;
@@ -35,4 +39,4 @@
 	100% {
 	   opacity: 1;
 	}
-  }
+}

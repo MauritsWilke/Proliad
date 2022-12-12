@@ -16,19 +16,6 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		csp: {
-			mode: "hash",
-			directives: {
-			  'script-src': ['self'],
-			  'img-src': [
-					'self', 'https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/'
-				],
-			  'style-src': [
-					'self', 'https://fonts.googleapis.com/', 'unsafe-inline'
-				],
-				'media-src': ['self']
-			}
-		}
 	}
 };
 

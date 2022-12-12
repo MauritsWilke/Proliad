@@ -7,20 +7,20 @@
 
 
 <div id="footer">
-    <h1>{footerData.title}</h1>
+    <h1 class="editable">{footerData.title}</h1>
     <div id="info">
         <div id="contact">
-            <h2>{footerData.name}</h2>
-            <p>{footerData.address}</p>
-            <p>{footerData.email}</p>
-            <p>{footerData.phone}</p>
+            <h2>{@html footerData.name}</h2>
+            <p>{@html footerData.address}</p>
+            <p>{@html footerData.email}</p>
+            <p>{@html footerData.phone}</p>
         </div>
         <div id="socials">
             <a href={footerData.facebookLink}><img src={footerData.facebookIcon} alt="facebook" /></a>
             <a href={footerData.twitterLink}><img src={footerData.twitterIcon} alt="twitter" /></a>
             <a href={footerData.linkedInLink}><img src={footerData.linkedInIcon} alt="linkedin" /></a>
             <p>{@html (footerData.newsletter ?? "").replace(footerData.newsletterLinkWord, `<a style="color: #fdf8ff; background-color: transparent;" href="${footerData.newsletterLink}">${footerData.newsletterLinkWord}</a>`)}</p>
-            <p>{footerData.open}</p>
+            <p>{@html footerData.open}</p>
         
         </div>
     </div>

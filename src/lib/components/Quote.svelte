@@ -4,9 +4,9 @@
 </script>
 
 <div id="wrapper">
-    <div id="quote">
+    <div id="quoteMain">
         <div id="marker" style="background-color: {color}" />
-        <p id="text" style="color: {color}">{text}</p>
+        <h2 class="editable" id="quote" style="color: {color}">{@html text}</h2>
     </div>
 </div>
 
@@ -23,7 +23,7 @@
         margin-top: calc(2vh + 2vw);
         padding-bottom: calc(2vh + 2vw);
 
-        #quote {
+        #quoteMain {
             display: table;
             height: 5vh;
 
@@ -34,7 +34,7 @@
                 margin-left: 1vw;
             }
 
-            #text {
+            #quote {
                 display: table-cell;
                 vertical-align: middle;
                 font-weight: 300;

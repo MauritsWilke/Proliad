@@ -2,8 +2,8 @@
     export let text: string = "";
 </script>
 
-<div>
-    <p>{text}</p>
+<div id="intro">
+    <p class="editable">{@html text}</p>
 </div>
 
 <style lang="scss">
