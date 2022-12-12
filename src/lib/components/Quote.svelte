@@ -39,6 +39,9 @@
             #quote {
                 display: table-cell;
                 vertical-align: middle;
+                padding-left: 0.7vw;
+                font-weight: 300;
+                font-size: calc(1vw + 1vh);
             }
         }
     }
