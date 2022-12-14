@@ -1,8 +1,21 @@
 <script lang="ts">
 	import type { DocumentData } from "firebase/firestore";
+	import { onMount } from "svelte";
 
 	export let contentItems: { [key: string]: DocumentData };
 	export let order: string[];
+
+	let baseURL = "https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/o/assets%2F";
+
+	function getURL(assetName: string) {
+		return baseURL + assetName + "?alt=media";
+	}
+
+	onMount(() => {
+		addEventListener("ChangeAssetVersion", () => {
+			baseURL = baseURL === "https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/o/assets%2F" ? "https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/o/assets2%2F" : "https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/o/assets%2F"
+		});
+	})
 </script>
 
 <div id="contentList">
@@ -16,10 +29,12 @@
 				<p class="editable">{@html contentItems[orderTitle].text}</p>
 			</div>
 			<div id="visual">
-				<img
-					src={contentItems[orderTitle].imageURL}
-					alt={`${contentItems[orderTitle].title} image`}
-				/>
+				{#key baseURL}
+					<img
+						src={getURL(contentItems[orderTitle].assetName)}
+						alt={`${contentItems[orderTitle].title} image`}
+					/>
+				{/key}
 			</div>
 		</div>
 	{/each}
@@ -29,7 +44,7 @@
 
 	#contentList {
 		display: grid;
-		margin-bottom: 20%;
+		margin-bottom: 15%;
 
 		.contentItem {
 			padding-left: 7.5%;
