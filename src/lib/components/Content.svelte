@@ -4,8 +4,7 @@
 
 	export let contentItems: { [key: string]: DocumentData };
 	export let order: string[];
-
-	let baseURL = "https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/o/assets%2F";
+	export let baseURL = "https://firebasestorage.googleapis.com/v0/b/proliad.appspot.com/o/assets%2F";
 
 	function getURL(assetName: string) {
 		return baseURL + assetName + "?alt=media";
@@ -29,7 +28,7 @@
 				<p class="editable">{@html contentItems[orderTitle].text}</p>
 			</div>
 			<div id="visual">
-				{#key baseURL}
+				{#key baseURL || baseURL}
 					<img
 						src={getURL(contentItems[orderTitle].assetName)}
 						alt={`${contentItems[orderTitle].title} image`}
