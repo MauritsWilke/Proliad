@@ -9,12 +9,13 @@
 <div id="footer">
     <h1 class="editable">{footerData.title}</h1>
     <div id="info">
-        <div id="contact">
+        <address id="contact">
             <h2 class="editable" id="name">{@html footerData.name}</h2>
             <p class="editable" id="address">{@html footerData.address}</p>
-            <p class="editable" id="email">{@html footerData.email}</p>
-            <p class="editable" id="phone">{@html footerData.phone}</p>
-        </div>
+            <a href={`mailto:${footerData.email}`} class="editable" id="email">{@html footerData.email}</a>
+            <br>
+            <a href={`tel:${footerData.phone}`} class="editable" id="phone">{@html footerData.phone}</a>
+        </address>
         <div id="socials">
             <a href={footerData.facebookLink}><img src={footerData.facebookIcon} alt="facebook" /></a>
             <a href={footerData.twitterLink}><img src={footerData.twitterIcon} alt="twitter" /></a>
@@ -42,6 +43,7 @@
         }
 
         #info {
+            text-underline-position: under;
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin-top: calc(1vw + 1vh);
@@ -50,6 +52,7 @@
             padding-bottom: calc(1.5vh + 1vw);
 
             #contact {
+                font-style: normal;
                 margin-left: 2vw;
                 margin-right: 2vw;
 
@@ -58,7 +61,7 @@
                     line-height: calc(1.5vw + 1.5vh);
                 }
 
-                p {
+                p, a {
                     font-size: calc(1vw + 0.6vh);
                     max-width: 35vw;
                 }
@@ -68,7 +71,7 @@
                 margin-right: 2vw;
                 margin-left: 2vw;
 
-                p {
+                p, a {
                     font-size: calc(1vw + 0.6vh);
                     max-width: calc(49vw - 2.5vh);
                 }

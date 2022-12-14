@@ -76,11 +76,35 @@
 			}
 		});
 
-		function makeEditable(element: HTMLElement, editable: boolean = true) {
-			if (element.classList.contains("editable")) element.contentEditable = `${editable}`;			
-		}
+		function makeEditable(editable: boolean = true) {
+			wrapper?.childNodes.forEach((node) => {
+					if (node instanceof HTMLElement) {
+						node.childNodes.forEach((child) => {
+							if (child instanceof HTMLElement) {
+								if (child.classList.contains("editable")) child.contentEditable = `${editable}`
+								child.childNodes.forEach((grandChild) => {
+									if (grandChild instanceof HTMLElement) {
+										if (grandChild.classList.contains("editable")) grandChild.contentEditable = `${editable}`
 
-		let editable = false;
+										grandChild.childNodes.forEach((greatGrandChild) => {
+											if (greatGrandChild instanceof HTMLElement) {
+												if (greatGrandChild.classList.contains("editable")) greatGrandChild.contentEditable = `${editable}`
+											}
+											
+											greatGrandChild.childNodes.forEach((greatGreatGrandChild) => {
+												if (greatGreatGrandChild instanceof HTMLElement) {
+													if (greatGreatGrandChild.classList.contains("editable")) greatGreatGrandChild
+													.contentEditable = `${editable}`
+												}
+											});
+										});
+									}
+								});
+							}
+						});
+					}
+				});
+		}
 
 		const toChange = []
 		const changedElements: Set<Event> = new Set();
@@ -88,26 +112,54 @@
 		addEventListener("keydown", (event) => {
 			keysDown.add(event.key);
 
+			if (keysDown.has("Escape")) {
+				wrapper?.childNodes.forEach((node) => {
+					if (node instanceof HTMLElement) {
+						node.childNodes.forEach((child) => {
+							if (child instanceof HTMLElement) {
+								makeEditable(child, false)
+								child.childNodes.forEach((grandChild) => {
+									if (grandChild instanceof HTMLElement) {
+										makeEditable(grandChild, false)
+
+										grandChild.childNodes.forEach((greatGrandChild) => {
+											if (greatGrandChild instanceof HTMLElement) {
+												makeEditable(greatGrandChild, false)
+											}
+											
+											greatGrandChild.childNodes.forEach((greatGreatGrandChild) => {
+												if (greatGreatGrandChild instanceof HTMLElement) {
+													makeEditable(greatGreatGrandChild, false)
+												}
+											});
+										});
+									}
+								});
+							}
+						});
+					}
+				});
+			}
 			if (keysDown.has("Control") && keysDown.has("s")) {
 				event.preventDefault();
 
 				changedElements.forEach(e => {
 					if (["p"].includes(e.srcElement?.localName)) {
-						if (e.srcElement.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"text": e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "intro") updateDoc(doc(firestore, "content/other"), {"intro": e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "tagline") updateDoc(doc(firestore, "content/other"), {"tagline": e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"text": e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "intro") updateDoc(doc(firestore, "content/other"), {"intro": e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "tagline") updateDoc(doc(firestore, "content/other"), {"tagline": e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
 					} else if (["h1"].includes(e.srcElement?.localName)) {
-						if (e.srcElement.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"), {"title": e.srcElement?.innerText})
+						if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"), {"title": e.srcElement?.innerText})
 					} else {
-						if (e.srcElement.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
-						else if (e.srcElement.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						else if (e.srcElement?.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
 						else updateDoc(doc(firestore, "content/other"), {[e.srcElement?.id]: e.srcElement?.innerText})
 					}
 				});
