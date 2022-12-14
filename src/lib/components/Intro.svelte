@@ -15,7 +15,7 @@
         p {
             width: 55.75%;
 
-            font-size: calc(0.5vh + 1.25vw);
+            font-size: calc(0.75vh + 1.5vw);
             font-weight: 400;
             text-align: center;
         }

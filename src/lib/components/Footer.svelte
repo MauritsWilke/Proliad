@@ -11,7 +11,8 @@
     <div id="info">
         <address id="contact">
             <h2 class="editable" id="name">{@html footerData.name}</h2>
-            <p class="editable" id="address">{@html footerData.address}</p>
+            <a href="https://goo.gl/maps/98iUP4bTPUJzRi8X8" class="editable" id="address">{@html footerData.address}</a>
+            <br>
             <a href={`mailto:${footerData.email}`} class="editable" id="email">{@html footerData.email}</a>
             <br>
             <a href={`tel:${footerData.phone}`} class="editable" id="phone">{@html footerData.phone}</a>
@@ -22,7 +23,6 @@
             <a href={footerData.linkedInLink}><img src={footerData.linkedInIcon} alt="linkedin" /></a>
             <p class="editable">{@html (footerData.newsletter ?? "").replace(footerData.newsletterLinkWord, `<a style="color: #fdf8ff; background-color: transparent; cursor: pointer;" href="${footerData.newsletterLink}">${footerData.newsletterLinkWord}</a>`)}</p>
             <p class="editable" id="open">{@html footerData.open}</p>
-        
         </div>
     </div>
 </div>

@@ -93,8 +93,7 @@
 											
 											greatGrandChild.childNodes.forEach((greatGreatGrandChild) => {
 												if (greatGreatGrandChild instanceof HTMLElement) {
-													if (greatGreatGrandChild.classList.contains("editable")) greatGreatGrandChild
-													.contentEditable = `${editable}`
+													if (greatGreatGrandChild.classList.contains("editable")) greatGreatGrandChild.contentEditable = `${editable}`
 												}
 											});
 										});
