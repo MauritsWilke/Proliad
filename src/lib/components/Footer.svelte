@@ -10,17 +10,17 @@
     <h1 class="editable">{footerData.title}</h1>
     <div id="info">
         <div id="contact">
-            <h2>{@html footerData.name}</h2>
-            <p>{@html footerData.address}</p>
-            <p>{@html footerData.email}</p>
-            <p>{@html footerData.phone}</p>
+            <h2 id="name">{@html footerData.name}</h2>
+            <p id="address">{@html footerData.address}</p>
+            <p id="email">{@html footerData.email}</p>
+            <p id="phone">{@html footerData.phone}</p>
         </div>
         <div id="socials">
             <a href={footerData.facebookLink}><img src={footerData.facebookIcon} alt="facebook" /></a>
             <a href={footerData.twitterLink}><img src={footerData.twitterIcon} alt="twitter" /></a>
             <a href={footerData.linkedInLink}><img src={footerData.linkedInIcon} alt="linkedin" /></a>
             <p>{@html (footerData.newsletter ?? "").replace(footerData.newsletterLinkWord, `<a style="color: #fdf8ff; background-color: transparent;" href="${footerData.newsletterLink}">${footerData.newsletterLinkWord}</a>`)}</p>
-            <p>{@html footerData.open}</p>
+            <p id="open">{@html footerData.open}</p>
         
         </div>
     </div>
