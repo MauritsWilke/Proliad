@@ -25,16 +25,15 @@
 
 <style lang="scss">
 	.contentItem {
-		margin-left: 7.5%;
-		margin-right: 7.5%;
-		margin-top: 75px;
-		margin-bottom: calc(150px + 5vw);
+		padding-left: 7.5%;
+		padding-right: 7.5%;
+		padding-top: 75px;
+		padding-bottom: calc(150px + 5vw);
 		height: calc(10vh + 15vw);
 
 		#content {
 			float: left;
-			width: calc(50% - 2.5%);
-			height: 100%;
+			width: calc(50% - 7.5%);
 
 			display: flex;
 			flex-direction: column;

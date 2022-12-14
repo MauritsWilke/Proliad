@@ -61,6 +61,12 @@
 								child.childNodes.forEach((grandChild) => {
 									if (grandChild instanceof HTMLElement) {
 										makeEditable(grandChild)
+
+										grandChild.childNodes.forEach((greatGrandChild) => {
+											if (greatGrandChild instanceof HTMLElement) {
+												makeEditable(greatGrandChild)
+											}
+										});
 									}
 								});
 							}
@@ -73,6 +79,8 @@
 		function makeEditable(element: HTMLElement, editable: boolean = true) {
 			if (element.classList.contains("editable")) element.contentEditable = `${editable}`;			
 		}
+
+		let editable = false;
 
 		const toChange = []
 		const changedElements: Set<Event> = new Set();
@@ -88,11 +96,19 @@
 						if (e.srcElement.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"text": e.srcElement?.innerText})
 						else if (e.srcElement.parentNode.id === "intro") updateDoc(doc(firestore, "content/other"), {"intro": e.srcElement?.innerText})
 						else if (e.srcElement.parentNode.id === "tagline") updateDoc(doc(firestore, "content/other"), {"tagline": e.srcElement?.innerText})
+						else if (e.srcElement.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
+						else if (e.srcElement.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						else if (e.srcElement.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						else if (e.srcElement.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
 					} else if (["h1"].includes(e.srcElement?.localName)) {
 						if (e.srcElement.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
 						else if (e.srcElement.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"), {"title": e.srcElement?.innerText})
 					} else {
-						updateDoc(doc(firestore, "content/other"), {[e.srcElement?.id]: e.srcElement?.innerText})
+						if (e.srcElement.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
+						else if (e.srcElement.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						else if (e.srcElement.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						else if (e.srcElement.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						else updateDoc(doc(firestore, "content/other"), {[e.srcElement?.id]: e.srcElement?.innerText})
 					}
 				});
 
@@ -111,6 +127,12 @@
 											if (greatGrandChild instanceof HTMLElement) {
 												makeEditable(greatGrandChild, false)
 											}
+											
+											greatGrandChild.childNodes.forEach((greatGreatGrandChild) => {
+												if (greatGreatGrandChild instanceof HTMLElement) {
+													makeEditable(greatGreatGrandChild, false)
+												}
+											});
 										});
 									}
 								});
@@ -122,6 +144,7 @@
 		});
 
 		addEventListener("input", (e) => {
+			console.log(e)
 			changedElements.add(e)
 		});
 
