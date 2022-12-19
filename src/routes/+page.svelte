@@ -104,23 +104,24 @@
 				makeEditable(false);
 
 				changedElements.forEach(e => {
+					const data: string = e.srcElement?.innerText.replace("\n", "<br>")
 					if (["p"].includes(e.srcElement?.localName)) {
-						if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"text": e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "intro") updateDoc(doc(firestore, "content/other"), {"intro": e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "tagline") updateDoc(doc(firestore, "content/other"), {"tagline": e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
+						if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"text": data})
+						else if (e.srcElement?.parentNode.id === "intro") updateDoc(doc(firestore, "content/other"), {"intro": data})
+						else if (e.srcElement?.parentNode.id === "tagline") updateDoc(doc(firestore, "content/other"), {"tagline": data})
+						else if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": data})
+						else if (e.srcElement?.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: data})
+						else if (e.srcElement?.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: data})
+						else if (e.srcElement?.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: data})
 					} else if (["h1"].includes(e.srcElement?.localName)) {
-						if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"), {"title": e.srcElement?.innerText})
+						if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": data})
+						else if (e.srcElement?.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"), {"title": data})
 					} else {
-						if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
-						else if (e.srcElement?.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: e.srcElement?.innerText})
-						else updateDoc(doc(firestore, "content/other"), {[e.srcElement?.id]: e.srcElement?.innerText})
+						if (e.srcElement?.parentNode.id === "content") updateDoc(doc(firestore, "content", e.srcElement?.parentNode.parentNode.id), {"title": data})
+						else if (e.srcElement?.parentNode.id === "footer") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: data})
+						else if (e.srcElement?.parentNode.id === "contact") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: data})
+						else if (e.srcElement?.parentNode.id === "socials") updateDoc(doc(firestore, "content/footerData"),  {[e.srcElement?.id]: data})
+						else updateDoc(doc(firestore, "content/other"), {[e.srcElement?.id]: data})
 					}
 				});
 
@@ -129,7 +130,6 @@
 		});
 
 		addEventListener("input", (e) => {
-			console.log(e)
 			changedElements.add(e)
 		});
 

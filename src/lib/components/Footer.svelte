@@ -1,5 +1,14 @@
 <script lang="ts">
 	import type { DocumentData } from "firebase/firestore";
+	import { onMount } from "svelte";
+
+    onMount(() => {
+        document.getElementById('footer').addEventListener('keypress', (evt) => {
+            if (evt.which === 13) {
+                evt.preventDefault();
+            }
+        });
+    })
 
 
     export let footerData: DocumentData;
@@ -7,7 +16,7 @@
 
 
 <div id="footer">
-    <h1 class="editable">{footerData.title}</h1>
+    <h1 id="contactTitle" class="editable">{footerData.title}</h1>
     <div id="info">
         <address id="contact">
             <h2 class="editable" id="name">{@html footerData.name}</h2>
@@ -29,17 +38,19 @@
 
 <style lang="scss">
     * {
-        background-color: #f78f1e;
         color: #fdf8ff;
+        background-color: #f78f1e !important;
     }
+    
     #footer {
+        background-color: #f78f1e !important;
         width: 100vw;
         margin-top: calc(-75px - 2.5vw);
         padding-top: calc(7vh - 7vw);
 
         h1 {
             text-align: center;
-            font-size: calc(2vw + 2.5vh);
+            font-size: calc(2vw + 2.5vh)
         }
 
         #info {
