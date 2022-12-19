@@ -36,10 +36,6 @@
 				}
 				contentItems[item.id] = item.data();
 			});
-			
-			console.log(contentItems)
-			console.log(other)
-			console.log(footerData)
 
 			localStorage.setItem("contentItems", JSON.stringify(contentItems));
 			localStorage.setItem("other", JSON.stringify(other));
