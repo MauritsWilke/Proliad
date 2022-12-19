@@ -35,7 +35,7 @@
     #footer {
         width: 100vw;
         margin-top: calc(-75px - 2.5vw);
-        padding-top: calc(2.5vh + 2.5vw);
+        padding-top: calc(7vh - 7vw);
 
         h1 {
             text-align: center;
@@ -55,7 +55,6 @@
                 font-style: normal;
                 margin-left: 2vw;
                 margin-right: 2vw;
-                padding-bottom: 10px;
 
                 h2 {
                     font-size: calc(1.5vw + 1.5vh);
